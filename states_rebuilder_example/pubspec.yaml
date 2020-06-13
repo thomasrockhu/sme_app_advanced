@@ -29,9 +29,13 @@ dependencies:
   dartz: ^0.9.1
   states_rebuilder: ^2.2.0
   weather_app_example_data_models_core:
-    path: ../weather_app_example_data_models_core
+    git:
+      url: https://github.com/eddiesTime/sme_app.git
+      path: ./weather_app_example_data_models_core
   weather_repository_core:
-    path: ../weather_repository_core
+    git:
+      url: https://github.com/eddiesTime/sme_app.git
+      path: ./weather_repository_core
 
 dev_dependencies:
   flutter_test:
