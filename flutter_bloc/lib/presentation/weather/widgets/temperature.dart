@@ -25,7 +25,7 @@ class Temperature extends StatelessWidget {
               state.temperatureUnit == TemperatureUnit.celsius
                   ? '${_formattedTemperature(state.temperatureUnit, temperature)}°C'
                   : '${_formattedTemperature(state.temperatureUnit, temperature)}°F',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.w600,
                 color: Colors.white,
@@ -38,7 +38,7 @@ class Temperature extends StatelessWidget {
                 state.temperatureUnit == TemperatureUnit.celsius
                     ? 'min ${_formattedTemperature(state.temperatureUnit, low)}°C'
                     : 'min ${_formattedTemperature(state.temperatureUnit, low)}°F',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w100,
                   color: Colors.white,
@@ -48,7 +48,7 @@ class Temperature extends StatelessWidget {
                 state.temperatureUnit == TemperatureUnit.celsius
                     ? 'max ${_formattedTemperature(state.temperatureUnit, high)}°C'
                     : 'max ${_formattedTemperature(state.temperatureUnit, high)}°F',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w100,
                   color: Colors.white,

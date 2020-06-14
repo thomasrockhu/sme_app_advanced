@@ -25,7 +25,7 @@ class CitySelection extends StatelessWidget {
             ),
           ),
           IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: () {
               context.bloc<WeatherBloc>().add(
                   WeatherEvent.fetchWeatherForLocation(_textController.text));

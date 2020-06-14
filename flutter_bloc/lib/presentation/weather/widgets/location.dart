@@ -11,7 +11,7 @@ class Location extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       location,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 30,
         fontWeight: FontWeight.bold,
         color: Colors.white,
