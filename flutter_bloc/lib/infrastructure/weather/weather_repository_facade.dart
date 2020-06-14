@@ -8,8 +8,7 @@ import 'package:weather_repository_core/weather_repository_core.dart';
 ///
 /// It takes in a [WeatherRepository] which is used to request weather data.
 @prod
-@lazySingleton
-@RegisterAs(IWeatherFacade)
+@LazySingleton(as: IWeatherFacade)
 class WeatherRepositoryFacade implements IWeatherFacade {
   final WeatherRepository _weatherRepository;
 
