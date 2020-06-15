@@ -7,7 +7,6 @@ import 'package:weather_repository_core/weather_repository_core.dart';
 /// Implements the interface `WeatherFacade` provided by the domain layer.
 ///
 /// It takes in a [WeatherRepository] which is used to request weather data.
-@prod
 @LazySingleton(as: IWeatherFacade)
 class WeatherRepositoryFacade implements IWeatherFacade {
   final WeatherRepository _weatherRepository;

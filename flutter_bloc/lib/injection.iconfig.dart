@@ -9,8 +9,8 @@ import 'package:flutter_bloc_example/domain/settings/settings_entity.dart';
 import 'package:flutter_bloc_example/application/theme/theme_bloc.dart';
 import 'package:flutter_bloc_example/domain/theme/theme_entity.dart';
 import 'package:flutter_bloc_example/domain/weather/weather_entity.dart';
-import 'package:weather_repository_core/weather_repository_core.dart';
 import 'package:flutter_bloc_example/infrastructure/weather/weather_repository_injectable_module.dart';
+import 'package:weather_repository_core/weather_repository_core.dart';
 import 'package:flutter_bloc_example/infrastructure/weather/weather_repository_facade.dart';
 import 'package:flutter_bloc_example/domain/weather/i_weather_facade.dart';
 import 'package:flutter_bloc_example/application/weather/weather_bloc.dart';
@@ -26,13 +26,9 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerFactory<WeatherEntity>(() => WeatherEntity.initial());
   g.registerLazySingleton<WeatherRepository>(
       () => weatherRepositoryInjectableModule.weatherRepository);
+  g.registerLazySingleton<IWeatherFacade>(
+      () => WeatherRepositoryFacade(g<WeatherRepository>()));
   g.registerFactory<WeatherBloc>(() => WeatherBloc(g<IWeatherFacade>()));
-
-  //Register prod Dependencies --------
-  if (environment == 'prod') {
-    g.registerLazySingleton<IWeatherFacade>(
-        () => WeatherRepositoryFacade(g<WeatherRepository>()));
-  }
 }
 
 class _$WeatherRepositoryInjectableModule
