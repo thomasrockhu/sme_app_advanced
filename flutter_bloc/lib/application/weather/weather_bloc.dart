@@ -21,7 +21,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   WeatherBloc(this._weatherFacade);
 
   @override
-  WeatherState get initialState => const WeatherState.initial();
+  WeatherState get initialState => const Initial();
 
   @override
   Stream<WeatherState> mapEventToState(
@@ -39,16 +39,21 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   ///
   /// Yields [WeatherState.loadingFailure()] when an error occured while fetchibg the weather data.
   Stream<WeatherState> _mapFetchWeatherToState(FetchWeather event) async* {
-    yield const WeatherState.loading();
+    yield const Loading();
     try {
       final WeatherResponse _weatherResponse =
           await _weatherFacade.getWeatherForLocation(location: event.location);
-      yield WeatherState.loaded(WeatherEntity(
+      yield Loaded(
+        WeatherEntity(
           weatherResponse: some(_weatherResponse),
           city: event.location,
-          lastUpdated: some(DateTime.now())));
+          lastUpdated: some(
+            DateTime.now(),
+          ),
+        ),
+      );
     } catch (err) {
-      yield const WeatherState.loadingFailure();
+      yield const LoadingFailure();
     }
   }
 
@@ -59,12 +64,17 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     try {
       final WeatherResponse _weatherResponse =
           await _weatherFacade.getWeatherForLocation(location: event.location);
-      yield WeatherState.loaded(WeatherEntity(
+      yield Loaded(
+        WeatherEntity(
           weatherResponse: some(_weatherResponse),
           city: event.location,
-          lastUpdated: some(DateTime.now())));
+          lastUpdated: some(
+            DateTime.now(),
+          ),
+        ),
+      );
     } catch (err) {
-      yield const WeatherState.loadingFailure();
+      yield const LoadingFailure();
     }
   }
 }
