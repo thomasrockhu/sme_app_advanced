@@ -93,10 +93,11 @@ class __$ThemeEntityCopyWithImpl<$Res> extends _$ThemeEntityCopyWithImpl<$Res>
   }
 }
 
-class _$_ThemeEntity with DiagnosticableTreeMixin implements _ThemeEntity {
+class _$_ThemeEntity extends _ThemeEntity with DiagnosticableTreeMixin {
   const _$_ThemeEntity({@required this.themeData, @required this.materialColor})
       : assert(themeData != null),
-        assert(materialColor != null);
+        assert(materialColor != null),
+        super._();
 
   @override
   final ThemeData themeData;
@@ -140,7 +141,8 @@ class _$_ThemeEntity with DiagnosticableTreeMixin implements _ThemeEntity {
       __$ThemeEntityCopyWithImpl<_ThemeEntity>(this, _$identity);
 }
 
-abstract class _ThemeEntity implements ThemeEntity {
+abstract class _ThemeEntity extends ThemeEntity {
+  const _ThemeEntity._() : super._();
   const factory _ThemeEntity(
       {@required ThemeData themeData,
       @required MaterialColor materialColor}) = _$_ThemeEntity;

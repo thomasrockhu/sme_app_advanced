@@ -82,15 +82,25 @@ class _$ToggleTemperatureUnitCopyWithImpl<$Res>
   }
 }
 
-class _$ToggleTemperatureUnit implements ToggleTemperatureUnit {
+class _$ToggleTemperatureUnit
+    with DiagnosticableTreeMixin
+    implements ToggleTemperatureUnit {
   const _$ToggleTemperatureUnit(this.value) : assert(value != null);
 
   @override
   final bool value;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SettingsEvent.toggleTemperatureUnit(value: $value)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SettingsEvent.toggleTemperatureUnit'))
+      ..add(DiagnosticsProperty('value', value));
   }
 
   @override
@@ -197,7 +207,7 @@ class __$SettingsStateCopyWithImpl<$Res>
   }
 }
 
-class _$_SettingsState implements _SettingsState {
+class _$_SettingsState with DiagnosticableTreeMixin implements _SettingsState {
   const _$_SettingsState({@required this.temperatureUnit})
       : assert(temperatureUnit != null);
 
@@ -205,8 +215,16 @@ class _$_SettingsState implements _SettingsState {
   final TemperatureUnit temperatureUnit;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SettingsState(temperatureUnit: $temperatureUnit)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SettingsState'))
+      ..add(DiagnosticsProperty('temperatureUnit', temperatureUnit));
   }
 
   @override

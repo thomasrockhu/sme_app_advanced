@@ -109,15 +109,23 @@ class _$FetchWeatherCopyWithImpl<$Res> extends _$WeatherEventCopyWithImpl<$Res>
   }
 }
 
-class _$FetchWeather implements FetchWeather {
+class _$FetchWeather with DiagnosticableTreeMixin implements FetchWeather {
   const _$FetchWeather(this.location) : assert(location != null);
 
   @override
   final String location;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'WeatherEvent.fetchWeatherForLocation(location: $location)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'WeatherEvent.fetchWeatherForLocation'))
+      ..add(DiagnosticsProperty('location', location));
   }
 
   @override
@@ -226,15 +234,24 @@ class _$RefreshWeatherCopyWithImpl<$Res>
   }
 }
 
-class _$RefreshWeather implements RefreshWeather {
+class _$RefreshWeather with DiagnosticableTreeMixin implements RefreshWeather {
   const _$RefreshWeather(this.location) : assert(location != null);
 
   @override
   final String location;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'WeatherEvent.refreshWeatherForLocation(location: $location)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'WeatherEvent.refreshWeatherForLocation'))
+      ..add(DiagnosticsProperty('location', location));
   }
 
   @override
@@ -400,12 +417,18 @@ class _$InitialCopyWithImpl<$Res> extends _$WeatherStateCopyWithImpl<$Res>
   Initial get _value => super._value as Initial;
 }
 
-class _$Initial implements Initial {
+class _$Initial with DiagnosticableTreeMixin implements Initial {
   const _$Initial();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'WeatherState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'WeatherState.initial'));
   }
 
   @override
@@ -497,12 +520,18 @@ class _$LoadingCopyWithImpl<$Res> extends _$WeatherStateCopyWithImpl<$Res>
   Loading get _value => super._value as Loading;
 }
 
-class _$Loading implements Loading {
+class _$Loading with DiagnosticableTreeMixin implements Loading {
   const _$Loading();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'WeatherState.loading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'WeatherState.loading'));
   }
 
   @override
@@ -597,12 +626,18 @@ class _$LoadingFailureCopyWithImpl<$Res>
   LoadingFailure get _value => super._value as LoadingFailure;
 }
 
-class _$LoadingFailure implements LoadingFailure {
+class _$LoadingFailure with DiagnosticableTreeMixin implements LoadingFailure {
   const _$LoadingFailure();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'WeatherState.loadingFailure()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'WeatherState.loadingFailure'));
   }
 
   @override
@@ -718,15 +753,23 @@ class _$LoadedCopyWithImpl<$Res> extends _$WeatherStateCopyWithImpl<$Res>
   }
 }
 
-class _$Loaded implements Loaded {
+class _$Loaded with DiagnosticableTreeMixin implements Loaded {
   const _$Loaded(this.weatherEntity) : assert(weatherEntity != null);
 
   @override
   final WeatherEntity weatherEntity;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'WeatherState.loaded(weatherEntity: $weatherEntity)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'WeatherState.loaded'))
+      ..add(DiagnosticsProperty('weatherEntity', weatherEntity));
   }
 
   @override
