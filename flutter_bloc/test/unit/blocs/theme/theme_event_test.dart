@@ -1,4 +1,3 @@
-import 'package:flutter_bloc_example/application/settings/settings_bloc.dart';
 import 'package:flutter_bloc_example/application/theme/theme_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:weather_app_example_data_models_core/weather_app_example_data_models_core.dart';

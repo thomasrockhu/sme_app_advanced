@@ -9,13 +9,12 @@ void main() {
   group('ThemeBloc', () {
     ThemeBloc themeBloc;
     WeatherCondition weatherCondition;
-    ThemeEntity forClearWeatherCondition = ThemeEntity(
+    final ThemeEntity forClearWeatherCondition = ThemeEntity(
       themeData: ThemeData(
         primaryColor: Colors.orangeAccent,
       ),
       materialColor: Colors.yellow,
     );
-    ;
     final ThemeEntity initial = ThemeEntity.initial();
 
     setUp(() {
