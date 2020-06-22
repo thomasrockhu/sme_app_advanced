@@ -51,16 +51,22 @@ class _WeatherState extends State<Weather> {
         _refreshCompleter = Completer();
       }
     }, builder: (context, state) {
-      if (state is LoadingFailure) {
-        return _buildError();
-      }
-      if (state is Loading) {
-        return _buildLoading();
-      }
-      if (state is Loaded) {
-        return _buildWeather(context, state);
-      }
-      return _buildIdle();
+      return state.map(
+        initial: (_) => _buildIdle(),
+        loading: (_) => _buildLoading(),
+        loadingFailure: (_) => _buildError(),
+        loaded: (state) => _buildWeather(context, state),
+      );
+      // if (state is LoadingFailure) {
+      //   return _buildError();
+      // }
+      // if (state is Loading) {
+      //   return _buildLoading();
+      // }
+      // if (state is Loaded) {
+      //   return _buildWeather(context, state);
+      // }
+      // return _buildIdle();
     });
   }
 
