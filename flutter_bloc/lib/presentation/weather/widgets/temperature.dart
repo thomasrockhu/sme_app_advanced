@@ -8,11 +8,8 @@ class Temperature extends StatelessWidget {
   final double low;
   final double high;
 
-  const Temperature(
-    this.temperature,
-    this.low,
-    this.high,
-  );
+  const Temperature(this.temperature, this.low, this.high, {Key key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

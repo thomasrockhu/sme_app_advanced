@@ -73,8 +73,10 @@ class _WeatherState extends State<Weather> {
   Widget _buildWeather(BuildContext context, Loaded state) {
     return BlocBuilder<ThemeBloc, ThemeState>(builder: (context, themeState) {
       return GradientContainer(
+        key: const Key('__Gradient_Container__'),
         color: themeState.themeEntity.materialColor,
         child: RefreshIndicator(
+          key: const Key('__Refresh_Indicator__'),
           onRefresh: () {
             context.bloc<WeatherBloc>().add(
                   WeatherEvent.refreshWeatherForLocation(
@@ -88,6 +90,7 @@ class _WeatherState extends State<Weather> {
                 padding: const EdgeInsets.only(top: 100.0),
                 child: Center(
                   child: Location(
+                    key: const Key('__Location__'),
                     location: state.weatherEntity.weatherResponse
                         .getOrElse(() => null)
                         .title,
@@ -96,6 +99,7 @@ class _WeatherState extends State<Weather> {
               ),
               Center(
                 child: LastUpdated(
+                  key: const Key('__Last_Updated__'),
                   dateTime:
                       state.weatherEntity.lastUpdated.getOrElse(() => null),
                 ),
@@ -104,6 +108,7 @@ class _WeatherState extends State<Weather> {
                 padding: const EdgeInsets.symmetric(vertical: 50.0),
                 child: Center(
                   child: CombinedWeatherTemperature(
+                      key: const Key('__Combined_Weather_Temperature__'),
                       weatherResponse: state.weatherEntity.weatherResponse
                           .getOrElse(() => null)),
                 ),
@@ -116,17 +121,24 @@ class _WeatherState extends State<Weather> {
   }
 
   Widget _buildError() {
-    return const Text(
-      'Something went wrong!',
-      style: TextStyle(color: Colors.red),
+    return const Center(
+      key: Key('__Error__'),
+      child: Text(
+        'Something went wrong!',
+        style: TextStyle(color: Colors.red),
+      ),
     );
   }
 
   Widget _buildLoading() {
-    return const Center(child: CircularProgressIndicator());
+    return const Center(
+        child: CircularProgressIndicator(
+      key: Key('__Circular_Progress_Indicator__'),
+    ));
   }
 
   Widget _buildIdle() {
-    return const Center(child: Text('Please Select a Location'));
+    return const Center(
+        key: Key('__Idle__'), child: Text('Please Select a Location'));
   }
 }

@@ -9,6 +9,7 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          key: const Key('__Location_Search_App_Bar__'),
           title: const Text('City'),
         ),
         body: CitySelection());

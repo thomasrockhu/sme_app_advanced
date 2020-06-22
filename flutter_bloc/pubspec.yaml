@@ -42,6 +42,8 @@ dependencies:
       path: ./weather_repository_core
 
 dev_dependencies:
+  flutter_driver:
+    sdk: flutter
   flutter_test:
     sdk: flutter
   lint: ^1.2.0

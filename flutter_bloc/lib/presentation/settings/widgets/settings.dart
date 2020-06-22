@@ -20,6 +20,7 @@ class Settings extends StatelessWidget {
               subtitle: const Text(
                   'Use metric measurements (celsius) for temperature units.'),
               trailing: Switch(
+                key: const Key('__Settings_Switch__'),
                 value: settingsState.temperatureUnit == TemperatureUnit.celsius,
                 onChanged: (value) => context
                     .bloc<SettingsBloc>()

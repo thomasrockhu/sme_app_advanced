@@ -16,6 +16,7 @@ class CitySelection extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(left: 10.0),
               child: TextFormField(
+                key: const Key('__Location_Search_Text_Form_Field__'),
                 controller: _textController,
                 decoration: const InputDecoration(
                   labelText: 'City',
@@ -25,6 +26,7 @@ class CitySelection extends StatelessWidget {
             ),
           ),
           IconButton(
+            key: const Key('__Location_Search_Icon_Button__'),
             icon: const Icon(Icons.search),
             onPressed: () {
               context.bloc<WeatherBloc>().add(

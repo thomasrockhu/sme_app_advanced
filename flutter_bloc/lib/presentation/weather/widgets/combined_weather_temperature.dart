@@ -6,7 +6,8 @@ import 'package:weather_app_example_data_models_core/weather_app_example_data_mo
     as model;
 
 class CombinedWeatherTemperature extends StatelessWidget {
-  const CombinedWeatherTemperature({@required this.weatherResponse});
+  const CombinedWeatherTemperature({@required this.weatherResponse, Key key})
+      : super(key: key);
 
   final model.WeatherResponse weatherResponse;
 
@@ -21,6 +22,7 @@ class CombinedWeatherTemperature extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: WeatherConditions(
+                key: const Key('__Weather_Conditions__'),
                 condition:
                     _weather.mapConditionToWeatherCondition(_weather.condition),
               ),
@@ -31,19 +33,21 @@ class CombinedWeatherTemperature extends StatelessWidget {
                 _weather.temp,
                 _weather.minTemp,
                 _weather.maxTemp,
+                key: const Key('__Temperature__'),
               ),
             ),
           ],
         ),
         Center(
+            key: const Key('__Formatted_Weather_Condition__'),
             child: Text(
-          weatherResponse.weatherCollection.first.formattedCondition,
-          style: const TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.w200,
-            color: Colors.white,
-          ),
-        )),
+              weatherResponse.weatherCollection.first.formattedCondition,
+              style: const TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.w200,
+                color: Colors.white,
+              ),
+            )),
       ],
     );
   }

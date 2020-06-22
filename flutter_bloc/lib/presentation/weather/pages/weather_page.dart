@@ -17,9 +17,11 @@ class _WeatherPageState extends State<WeatherPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        key: const Key('__Weather_App_Bar__'),
         title: const Text('Flutter_Bloc Weather'),
         actions: <Widget>[
           IconButton(
+            key: const Key('__Settings_IconButton__'),
             icon: const Icon(Icons.settings),
             onPressed: () {
               Navigator.push(
@@ -34,6 +36,7 @@ class _WeatherPageState extends State<WeatherPage> {
       ),
       body: Weather(),
       floatingActionButton: FloatingActionButton(
+        key: const Key('__Search_FAB__'),
         backgroundColor: Theme.of(context).primaryColor,
         onPressed: () {
           Navigator.push(
