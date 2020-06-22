@@ -22,6 +22,7 @@ class Temperature extends StatelessWidget {
               state.temperatureUnit == TemperatureUnit.celsius
                   ? '${_formattedTemperature(state.temperatureUnit, temperature)}°C'
                   : '${_formattedTemperature(state.temperatureUnit, temperature)}°F',
+              key: const Key('__Temperature_Text__'),
               style: const TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.w600,

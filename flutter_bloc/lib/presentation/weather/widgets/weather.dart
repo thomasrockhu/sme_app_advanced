@@ -30,7 +30,8 @@ class _WeatherState extends State<Weather> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: _buildUI(context));
+    return Center(
+        key: const Key('__Weather_Page_Content__'), child: _buildUI(context));
   }
 
   Widget _buildUI(BuildContext context) {
