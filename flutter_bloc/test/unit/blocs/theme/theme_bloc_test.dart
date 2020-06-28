@@ -8,18 +8,40 @@ import 'package:weather_app_example_data_models_core/weather_app_example_data_mo
 void main() {
   group('ThemeBloc', () {
     ThemeBloc themeBloc;
-    WeatherCondition weatherCondition;
     final ThemeEntity forClearWeatherCondition = ThemeEntity(
       themeData: ThemeData(
         primaryColor: Colors.orangeAccent,
       ),
       materialColor: Colors.yellow,
     );
+    final ThemeEntity forSnowWeatherCondition = ThemeEntity(
+      themeData: ThemeData(
+        primaryColor: Colors.lightBlueAccent,
+      ),
+      materialColor: Colors.lightBlue,
+    );
+    final ThemeEntity forHeavyCloudWeatherCondition = ThemeEntity(
+      themeData: ThemeData(
+        primaryColor: Colors.blueGrey,
+      ),
+      materialColor: Colors.grey,
+    );
+    final ThemeEntity forShowersWeatherCondition = ThemeEntity(
+      themeData: ThemeData(
+        primaryColor: Colors.indigoAccent,
+      ),
+      materialColor: Colors.indigo,
+    );
+    final ThemeEntity forThunderstormWeatherCondition = ThemeEntity(
+      themeData: ThemeData(
+        primaryColor: Colors.deepPurpleAccent,
+      ),
+      materialColor: Colors.deepPurple,
+    );
     final ThemeEntity initial = ThemeEntity.initial();
 
     setUp(() {
       themeBloc = ThemeBloc();
-      weatherCondition = WeatherCondition.clear;
     });
 
     test(
@@ -32,9 +54,37 @@ void main() {
         'should emit ThemeState(forClearWeatherCondition) in response to WeatherCondition.clear',
         build: () async => themeBloc,
         act: (ThemeBloc bloc) async {
-          bloc.add(WeatherChanged(weatherCondition));
+          bloc.add(const WeatherChanged(WeatherCondition.clear));
         },
         expect: [ThemeState(themeEntity: forClearWeatherCondition)]);
+    blocTest(
+        'should emit ThemeState(forClearWeatherCondition) in response to WeatherCondition.snow',
+        build: () async => themeBloc,
+        act: (ThemeBloc bloc) async {
+          bloc.add(const WeatherChanged(WeatherCondition.snow));
+        },
+        expect: [ThemeState(themeEntity: forSnowWeatherCondition)]);
+    blocTest(
+        'should emit ThemeState(forClearWeatherCondition) in response to WeatherCondition.heavyCloud',
+        build: () async => themeBloc,
+        act: (ThemeBloc bloc) async {
+          bloc.add(const WeatherChanged(WeatherCondition.heavyCloud));
+        },
+        expect: [ThemeState(themeEntity: forHeavyCloudWeatherCondition)]);
+    blocTest(
+        'should emit ThemeState(forClearWeatherCondition) in response to WeatherCondition.showers',
+        build: () async => themeBloc,
+        act: (ThemeBloc bloc) async {
+          bloc.add(const WeatherChanged(WeatherCondition.showers));
+        },
+        expect: [ThemeState(themeEntity: forShowersWeatherCondition)]);
+    blocTest(
+        'should emit ThemeState(forClearWeatherCondition) in response to WeatherCondition.thunderstorm',
+        build: () async => themeBloc,
+        act: (ThemeBloc bloc) async {
+          bloc.add(const WeatherChanged(WeatherCondition.thunderstorm));
+        },
+        expect: [ThemeState(themeEntity: forThunderstormWeatherCondition)]);
     blocTest(
         'should emit ThemeState(ThemeEntity.inital) in response to WeatherCondition.unknown',
         build: () async => themeBloc,
