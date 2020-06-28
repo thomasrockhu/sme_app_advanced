@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Flutter
-        uses: subosito/flutter-action@v1.3.2
+        uses: subosito/flutter-action@v1
         with:
           channel: 'master'
       - name: Install Dependencies
