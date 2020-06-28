@@ -1,0 +1,55 @@
+# The name of your workflow.
+name: Test, build and deploy
+# Trigger the workflow on push and pull request.
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+# A workflow run is made up of one or more jobs. Jobs run parallel by default.
+jobs:
+  # First job.
+  test:
+    # The type of machine to run the job on. []
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: ./flutter_bloc
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Flutter
+      - uses: subosito/flutter-action@v1.3.2
+        with:
+          flutter-version: '1.20.0-1.0.pre'
+          channel: 'master'
+      - name: Install Dependencies
+        run: flutter pub get
+      - name: Run Analizer
+        run: flutter analyze
+      - name: Run unit and widget test. Create coverage report
+        run: flutter test test/main_test.dart --coverage
+      - name: Install CLI package to remove files from coverage report easily
+        run: pub global activate remove_from_coverage
+      - name: Remove .g.dart files from coverage report
+        run: pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '.g.dart$'
+      - name: Remove .freezed.dart files from coverage report
+        run: pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '.freezed.dart$'
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: coverage/lcov.info
+  # Second job.
+  # build:
+  #   runs-on: ubuntu-latest
+  #   defaults:
+  #     run:
+  #       working-directory: ./flutter_bloc
+  #   container:
+  #     image: google/dart:latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Install dependencies
+  #       run: flutter pub get
+  #     - name: Run tests
+  #       run: flutter test test/main_test.dart
