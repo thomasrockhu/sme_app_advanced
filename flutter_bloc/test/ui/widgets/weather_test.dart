@@ -131,8 +131,8 @@ void main() {
                 color: themeState.themeEntity.materialColor,
                 child: ListView(
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(top: 100.0),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 100.0),
                       child: Center(
                         child: Location(
                           location: 'London',

@@ -34,7 +34,7 @@ class CombinedWeatherTemperature extends StatelessWidget {
         Center(
             child: Text(
           weatherResponse.weatherCollection.first.formattedCondition,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.w200,
             color: Colors.white,

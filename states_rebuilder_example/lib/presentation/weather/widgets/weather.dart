@@ -110,7 +110,7 @@ class _WeatherState extends State<Weather> {
   }
 
   Widget _buildError() {
-    return Text(
+    return const Text(
       'Something went wrong!',
       style: TextStyle(color: Colors.red),
     );

@@ -24,7 +24,7 @@ class Temperature extends StatelessWidget {
                           TemperatureUnit.celsius
                       ? '${_formattedTemperature(reactiveModel.state.settingsEntity.temperatureUnit, temperature)}°C'
                       : '${_formattedTemperature(reactiveModel.state.settingsEntity.temperatureUnit, temperature)}°F',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
@@ -38,7 +38,7 @@ class Temperature extends StatelessWidget {
                             TemperatureUnit.celsius
                         ? 'min ${_formattedTemperature(reactiveModel.state.settingsEntity.temperatureUnit, low)}°C'
                         : 'min ${_formattedTemperature(reactiveModel.state.settingsEntity.temperatureUnit, low)}°F',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w100,
                       color: Colors.white,
@@ -49,7 +49,7 @@ class Temperature extends StatelessWidget {
                             TemperatureUnit.celsius
                         ? 'max ${_formattedTemperature(reactiveModel.state.settingsEntity.temperatureUnit, high)}°C'
                         : 'max ${_formattedTemperature(reactiveModel.state.settingsEntity.temperatureUnit, high)}°F',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w100,
                       color: Colors.white,

@@ -25,7 +25,7 @@ class CitySelection extends StatelessWidget {
             ),
           ),
           IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: () {
               Injector.getAsReactive<WeatherStore>().setState(
                 (store) => store.fetchWeatherForLocation(_textController.text),

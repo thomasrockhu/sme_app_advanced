@@ -15,7 +15,7 @@ class WeatherPage extends StatelessWidget {
         title: const Text('States_Rebuilder Weather'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.settings),
+            icon: const Icon(Icons.settings),
             onPressed: () {
               Navigator.push(
                 context,
@@ -38,7 +38,7 @@ class WeatherPage extends StatelessWidget {
             ),
           );
         },
-        child: Icon(
+        child: const Icon(
           Icons.search,
         ),
       ),
