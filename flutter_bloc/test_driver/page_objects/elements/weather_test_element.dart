@@ -53,7 +53,6 @@ class WeatherTestElement extends TestElement {
   }
 
   Future<String> get temperatureWidgetText async {
-    print(await driver.getText(_temperatureText));
     return driver.getText(_temperatureText);
   }
 }
