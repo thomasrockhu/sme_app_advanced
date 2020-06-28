@@ -26,7 +26,7 @@ jobs:
       - name: Run Analizer
         run: flutter analyze
       - name: Run unit and widget test. Create coverage report
-        run: flutter test test/main_test.dart --coverage
+        run: flutter test --coverage test/main_test.dart
       - name: Install CLI package to remove files from coverage report easily
         run: pub global activate remove_from_coverage
       - name: Remove .g.dart files from coverage report
