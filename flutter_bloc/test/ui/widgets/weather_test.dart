@@ -92,7 +92,7 @@ void main() {
           ),
         ),
       );
-      expect(find.byType(Center), findsOneWidget);
+      expect(find.byType(Center), findsNWidgets(2));
       expect(find.text('Something went wrong!'), findsOneWidget);
     });
 
