@@ -1,7 +1,18 @@
 import './ui/pages/location_search_page_test.dart' as location_search_page;
 import './ui/pages/settings_page_test.dart' as settings_page;
 import './ui/pages/weather_page_test.dart' as weather_page;
-
+import './unit/blocs/settings/settings_bloc_test.dart' as settings_bloc;
+import './unit/blocs/settings/settings_event_test.dart' as settings_event;
+import './unit/blocs/settings/settings_state_test.dart' as settings_state;
+import './unit/blocs/theme/theme_bloc_test.dart' as theme_bloc;
+import './unit/blocs/theme/theme_event_test.dart' as theme_event;
+import './unit/blocs/theme/theme_state_test.dart' as theme_state;
+import './unit/blocs/weather/weather_bloc_test.dart' as weather_bloc;
+import './unit/blocs/weather/weather_event_test.dart' as weather_event;
+import './unit/blocs/weather/weather_state_test.dart' as weather_state;
+import './unit/entities/settings_entity_test.dart' as settings_entity;
+import './unit/entities/theme_entity_test.dart' as theme_entity;
+import './unit/entities/weather_entity_test.dart' as weather_entity;
 import 'ui/widgets/city_selection_test.dart' as city_selection;
 import 'ui/widgets/combined_weather_temperature_test.dart'
     as combined_weather_temperature;
@@ -13,20 +24,6 @@ import 'ui/widgets/settings_test.dart' as settings;
 import 'ui/widgets/temperature_test.dart' as temperature;
 import 'ui/widgets/weather_conditions_test.dart' as weather_conditions;
 import 'ui/widgets/weather_test.dart' as weather;
-
-import './unit/blocs/settings/settings_bloc_test.dart' as settings_bloc;
-import './unit/blocs/settings/settings_event_test.dart' as settings_event;
-import './unit/blocs/settings/settings_state_test.dart' as settings_state;
-import './unit/blocs/theme/theme_bloc_test.dart' as theme_bloc;
-import './unit/blocs/theme/theme_event_test.dart' as theme_event;
-import './unit/blocs/theme/theme_state_test.dart' as theme_state;
-import './unit/blocs/weather/weather_bloc_test.dart' as weather_bloc;
-import './unit/blocs/weather/weather_event_test.dart' as weather_event;
-import './unit/blocs/weather/weather_state_test.dart' as weather_state;
-
-import './unit/entities/settings_entity_test.dart' as settings_entity;
-import './unit/entities/theme_entity_test.dart' as theme_entity;
-import './unit/entities/weather_entity_test.dart' as weather_entity;
 
 void main() {
   // Initialises the code generation for [get_it].
