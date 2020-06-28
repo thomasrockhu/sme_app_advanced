@@ -20,7 +20,7 @@ jobs:
       - name: Install Flutter
         uses: subosito/flutter-action@v1
         with:
-          channel: 'master'
+          channel: 'dev'
       - name: Install Dependencies
         run: flutter pub get
       - name: Run Analizer
