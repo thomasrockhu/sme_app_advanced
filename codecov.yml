@@ -1,8 +1,4 @@
 codecov:
   max_report_age: 24
-  ignore:
-    - '**/*.freezed.dart'
-    - '**/*.g.dart'
-    - 'states_rebuilder_example/**/*'
   fixes:
-    - 'flutter_bloc/::'
+    - '::/flutter_bloc'
