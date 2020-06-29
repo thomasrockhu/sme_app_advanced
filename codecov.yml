@@ -1,0 +1,9 @@
+codecov:
+  token: { { secrets.CODECOV_TOKEN } }
+  max_report_age: 24
+  ignore:
+    - '**/*.freezed.dart'
+    - '**/*.g.dart'
+    - 'states_rebuilder/'
+  fixes:
+    - '::flutter_bloc/'
