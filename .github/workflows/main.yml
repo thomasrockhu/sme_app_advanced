@@ -27,16 +27,16 @@ jobs:
         run: flutter analyze
       - name: Run unit and widget test. Create coverage report
         run: flutter test --coverage test/main_test.dart
-      - name: Install CLI package to remove files from coverage report easily
-        run: pub global activate remove_from_coverage
-      - name: Remove .g.dart files from coverage report
-        run: pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '.g.dart$'
-      - name: Remove .freezed.dart files from coverage report
-        run: pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '.freezed.dart$'
+      # - name: Install CLI package to remove files from coverage report easily
+      #   run: pub global activate remove_from_coverage
+      # - name: Remove .g.dart files from coverage report
+      #   run: pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '.g.dart$'
+      # - name: Remove .freezed.dart files from coverage report
+      #   run: pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '.freezed.dart$'
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1.0.7
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+          # token: ${{ secrets.CODECOV_TOKEN }}
           file: flutter_bloc/coverage/lcov.info
   # Second job.
   # build:

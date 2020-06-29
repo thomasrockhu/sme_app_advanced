@@ -4,6 +4,6 @@ codecov:
   ignore:
     - '**/*.freezed.dart'
     - '**/*.g.dart'
-    - 'states_rebuilder/'
+    - 'states_rebuilder_example/**/*'
   fixes:
     - '::flutter_bloc/'
