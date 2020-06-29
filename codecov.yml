@@ -6,4 +6,4 @@ codecov:
     - '**/*.g.dart'
     - 'states_rebuilder_example/**/*'
   fixes:
-    - '::flutter_bloc/'
+    - 'flutter_bloc/::'
