@@ -1,4 +1,4 @@
 codecov:
   max_report_age: 24
   fixes:
-    - '/lib/::'
+    - '::/flutter_bloc/lib'
