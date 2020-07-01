@@ -1,7 +1,3 @@
-codecov:
-  max_report_age: 24
-fixes:
-  - "::/flutter_block"
 # flags:
 #   flutter_bloc:
 #     paths:
