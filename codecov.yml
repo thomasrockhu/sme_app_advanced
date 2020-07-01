@@ -1,5 +1,6 @@
 fixes:
   - "lib/domain/::flutter_block/lib/domain"
+  - "lib/presentation/::flutter_block/lib/presentation"
 # flags:
 #   flutter_bloc:
 #     paths:
