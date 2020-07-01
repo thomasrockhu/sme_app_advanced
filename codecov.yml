@@ -1,5 +1,6 @@
 codecov:
   max_report_age: 24
+
 # flags:
 #   flutter_bloc:
 #     paths:
