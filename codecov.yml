@@ -1,3 +1,5 @@
+fixes:
+  - "lib/domain/::flutter_block/lib/domain"
 # flags:
 #   flutter_bloc:
 #     paths:
