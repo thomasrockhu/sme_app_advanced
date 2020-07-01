@@ -2,14 +2,13 @@ codecov:
   max_report_age: 24
 fixes:
   - '::flutter_bloc/'
-
-flags:
-  flutter_bloc:
-    paths:
-      - /flutter_bloc
-  states_rebuilder_example:
-    paths:
-      - /states_rebuilder_example
+# flags:
+#   flutter_bloc:
+#     paths:
+#       - /flutter_bloc
+#   states_rebuilder_example:
+#     paths:
+#       - /states_rebuilder_example
 # coverage:
 #   status:
 #     project:
