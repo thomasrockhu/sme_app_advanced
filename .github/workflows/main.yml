@@ -34,10 +34,7 @@ jobs:
       - name: Remove .freezed.dart files from coverage report
         run: pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '.freezed.dart$'
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1.0.7
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          file: flutter_bloc/coverage/lcov.info
+        run: bash <(curl -s https://codecov.io/bash) -f flutter_bloc/coverage/lcov.info -d -v
   # drive_ios:
   #   #creates a build matrix for your jobs
   #   strategy:
