@@ -1,5 +1,5 @@
-fixes:
-  - "::flutter_block/"
+# fixes:
+#   - "::flutter_block/"
 #   - "lib/application/::flutter_block/lib/application/"
 #   - "lib/domain/::flutter_block/lib/domain/"
 #   - "lib/presentation/::flutter_block/lib/presentation/"
