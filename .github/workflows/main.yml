@@ -34,7 +34,7 @@ jobs:
       - name: Remove .freezed.dart files from coverage report
         run: pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '.freezed.dart$'
       - name: Hack on coverage report
-        run: sed -i 's/SF:/SF:flutter_bloc\//g' coverage/lcov.info
+        run: sed -i '' 's/SF:/SF:flutter_bloc\//g' coverage/lcov.info
       - name: Upload coverage to Codecov
         run: bash <(curl -s https://codecov.io/bash)
 
